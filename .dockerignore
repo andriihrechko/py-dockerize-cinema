@@ -34,7 +34,3 @@ htmlcov/
 dist/
 build/
 *.egg-info/
-
-# docker
-Dockerfile
-docker-compose.yaml
