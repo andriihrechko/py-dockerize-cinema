@@ -11,4 +11,13 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+
+RUN adduser --disabled-password --no-create-home django-user
+
+RUN mkdir -p /files/staticfiles /files/mediafiles
+
+RUN chown -R django-user:django-user /files/
+RUN chmod -R 755 /files/
+USER django-user
+
 COPY . .

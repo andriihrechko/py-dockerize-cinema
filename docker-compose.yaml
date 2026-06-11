@@ -21,8 +21,8 @@ services:
     command: ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
     volumes:
       - .:/app
-      - static_data:/app/staticfiles
-      - media_data:/app/mediafiles
+      - static_data:/files/staticfiles
+      - media_data:/files/mediafiles
     depends_on:
       - cinema_db
 
