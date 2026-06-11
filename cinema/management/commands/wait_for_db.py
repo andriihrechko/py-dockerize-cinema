@@ -10,7 +10,7 @@ class Command(BaseCommand):
         database_connection = None
         while not database_connection:
             try:
-                database_connection = connections["default"]
+                database_connection = connections["default"].cursor()
             except (OperationalError, PsycopgError):
                 self.stdout.write("Database unavailable, waiting 1 second...")
                 time.sleep(1)
